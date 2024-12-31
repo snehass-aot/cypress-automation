@@ -25,7 +25,7 @@ describe("assertion demo",() => {
         cy.get('[data-testid="email-sign-in"]').click()
 
         cy.get('[data-testid="login-email-input"]').type("ppp@mailinator.com") //provide a value into input-box
-        cy.get('[data-testid="login-email-input"]').should('have.value','ppp@mailinator.com') //
+        cy.get('[data-testid="login-email-input"]').should('have.value','ppp@mailinator.com') //value check
 
 
     })
