@@ -1,3 +1,6 @@
+
+
+
 describe("assertion demo",() => {
     it("implicit assertion",() => {
         cy.visit("https://staging.divii.ca")
@@ -29,4 +32,35 @@ describe("assertion demo",() => {
 
 
     })
+
+    it("implicit assertion",() => {
+        cy.visit("https://staging.divii.ca")
+          
+        cy.get('[data-testid="proceed-to-login"]').click()
+        cy.get('[data-testid="email-sign-in"]').click()
+        cy.get('[data-testid="login-email-input"]').type("ppp@mailinator.com")
+        cy.get('[data-testid="login-password-input"]').type('123456')
+        cy.get('[data-testid="login-btn"]').click()
+        cy.wait(10000)
+
+
+        let expName = "Appu";
+        cy.get('#nav-user__BV_toggle_ > span').then( (x) => {
+
+            //BDD style
+            let actName = x.text()
+            expect(actName).to.not.equal(expName)
+
+
+            //TDD style
+            assert.equal(actName,expName)
+            //assert.notEqual(actName,expName)
+
+        })
+
+
+    })
+
+
+
 })
