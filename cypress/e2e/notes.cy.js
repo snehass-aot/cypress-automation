@@ -88,8 +88,29 @@
 
 
 
+//visibility of radio buttons
+//cy.get('css').should('be.visible')
+
+//selecting radio buttons
+//cy.get('css-male').check().should('be.checked')
+//cy.get('css-female').should('not.be.checked')
 
 
+//visibility of single checkbox
+//inside it block =>
+     //cy.get('css').should('be.visible')
+
+//selecting checkbox
+    //cy.get('css').check().should('be.checked')
+
+//unselecting checkbox
+ //cy.get('css').uncheck().should('not.be.checked')
+
+ //select multiple checkboxes
+  //cy.get('css of all checkboxes[attribute class value]').check().should('be.checked')
+
+//select only first or last or any specified checkbox write its position before check()
+    //eg:-cy.get('css of all checkboxes[attribute class value]').first().check().should('be.checked')
 
 
 
