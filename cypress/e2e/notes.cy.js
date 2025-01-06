@@ -129,7 +129,7 @@
 //.select('Italy')
 //.should('have.value','Italy')
 
-//.skip -- used to skip that step 
+//.skip -- used to skip that step
 
 //dropdown without select(type&enter select)
 //select and find dropdown element
@@ -143,7 +143,22 @@
 //cy.get('#element').type('Delhi)
 //cy.get('element-group-class --eg:delhi,delhi university,delhi temple').contains('Delhi').click()
 
+//Dynamic DropDown
 
+//it('Dynamic dropdown',()=>{
+//     cy.visit("https://google.com")
+//     cy.get("input[name='q']").type('cypress automation')
+//     cy.wait(3000)
+//     cy.get('div.wm6w7d>span').should('have.length',11)
+//     cy.get('div.wm6w7d>span').each(($el,index,$list) => {
+//         if($el.text()=='cypress automation tool'){
+//             cy.wrap($el).click()
+//         }
+//     })    
+
+//    cy.get("input[name='q']").should('have.value','cypress automation tool')
+
+// })
 
 
 
