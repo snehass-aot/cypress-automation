@@ -124,6 +124,17 @@
     //eg:-cy.get('css of all checkboxes[attribute class value]').first().check().should('be.checked')
 
 
+//DropDown
+//cy.get('#nav-link)
+//.select('Italy')
+//.should('have.value','Italy')
+
+//.skip -- used to skip that step 
+
+
+
+
+
 
 
 
