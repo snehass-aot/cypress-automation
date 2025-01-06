@@ -131,7 +131,9 @@
 
 //.skip -- used to skip that step 
 
-
+//dropdown without select(type&enter select)
+//select and find dropdown element
+//cy.get('#element').type('Italy').type('{enter}')
 
 
 
