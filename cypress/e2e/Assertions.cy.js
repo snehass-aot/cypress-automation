@@ -1,8 +1,8 @@
 
 
 
-describe("assertion demo",() => {
-    it("implicit assertion",() => {
+describe("assertion demo", () => {
+    it("implicit assertion", () => {
         cy.visit("https://staging.divii.ca")
 
         //should and
@@ -16,26 +16,26 @@ describe("assertion demo",() => {
         // .should('eq','https://staging.divii.ca/auth')
         // .should('contain','staging')
 
-        cy.url().should('include','divii.ca')
-        .and('eq','https://staging.divii.ca/auth')
-        .and('contain','staging')
+        cy.url().should('include', 'divii.ca')
+            .and('eq', 'https://staging.divii.ca/auth')
+            .and('contain', 'staging')
 
         cy.get('.navbar-brand > img').should('be.visible')
-        .and('exist')
-        
+            .and('exist')
+
 
         cy.get('[data-testid="proceed-to-login"]').click()
         cy.get('[data-testid="email-sign-in"]').click()
 
         cy.get('[data-testid="login-email-input"]').type("ppp@mailinator.com") //provide a value into input-box
-        cy.get('[data-testid="login-email-input"]').should('have.value','ppp@mailinator.com') //value check
+        cy.get('[data-testid="login-email-input"]').should('have.value', 'ppp@mailinator.com') //value check
 
 
     })
 
-    it("implicit assertion",() => {
+    it("implicit assertion", () => {
         cy.visit("https://staging.divii.ca")
-          
+
         cy.get('[data-testid="proceed-to-login"]').click()
         cy.get('[data-testid="email-sign-in"]').click()
         cy.get('[data-testid="login-email-input"]').type("ppp@mailinator.com")
@@ -45,17 +45,19 @@ describe("assertion demo",() => {
 
 
         let expName = "Appu";
-        cy.get('#nav-user__BV_toggle_ > span').then( (x) => {
+        cy.get('#nav-user__BV_toggle_ > span').then((x) => {
 
             //BDD style
             let actName = x.text()
-            expect(actName).to.not.equal(expName)
+            //expect(actName).to.not.equal(expName)
 
 
             //TDD style
-            assert.equal(actName,expName)
+            assert.equal(actName, expName)
             //assert.notEqual(actName,expName)
 
+            cy.get("#nav-user").click()
+            cy.get("#nav-logout").click()
         })
 
 
