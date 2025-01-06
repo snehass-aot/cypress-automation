@@ -1,5 +1,16 @@
 // Cypress tutorial
 // ----------------
+
+///uses of cypress
+/*----------------------
+|$-Automatic waiting |
+|$-Real-Time Reloads |
+|$-Easy Debugging    |
+|$-Visual Testing    |
+|$-Consistent results|
+----------------------*/
+
+
 // install and set up -- VScode
 // install and set up -- node(npm)
 
