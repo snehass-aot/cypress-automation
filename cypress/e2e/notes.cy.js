@@ -138,7 +138,10 @@
 
 
 
-
+//Auto Suggest DropDown
+//cy.visit('url')
+//cy.get('#element').type('Delhi)
+//cy.get('element-group-class --eg:delhi,delhi university,delhi temple').contains('Delhi').click()
 
 
 
