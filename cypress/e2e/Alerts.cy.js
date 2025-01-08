@@ -19,7 +19,7 @@ describe('Alerts', () => {
 
     //2)Javascript Confirm Alert : It will have some text with 'OK' and 'Cancel' button
 
-    it.only('Js Confirm Alert-Ok', () => {
+    it('Js Confirm Alert-Ok', () => {
 
         cy.visit('http://the-internet.herokuapp.com/javascript_alerts')
         
@@ -33,7 +33,7 @@ describe('Alerts', () => {
     })
 
 
-    it.only('Js Confirm Alert -Cancel', () => {
+    it('Js Confirm Alert -Cancel', () => {
 
         cy.visit('http://the-internet.herokuapp.com/javascript_alerts')
         
@@ -52,6 +52,22 @@ describe('Alerts', () => {
 
     //3)Javascript Prompt Alert : It will have some text with a text box for user input along with 'OK'
 
+         it.only('Js prompt Alert', () => {
+
+        cy.visit('http://the-internet.herokuapp.com/javascript_alerts')
+
+        cy.window().then((win) => {
+            cy.stub(win,'prompt').returns('welcome')
+        })
+        
+        cy.get("button[onclick='jsPrompt()']").click()
+
+        //cypress will automatically close prompted alert - it will use OK button - by default
+         
+         cy.on('window:prompt',() => false);//cypress closes alert window using cancel button
+
+         cy.get('#result').should('have.text','You entered: welcome')
+    })
 
 
     //Authenticated Alert
