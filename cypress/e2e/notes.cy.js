@@ -130,6 +130,8 @@
 //.should('have.value','Italy')
 
 //.skip -- used to skip that step
+//.only -- execute it only
+
 
 //dropdown without select(type&enter select)
 //select and find dropdown element
