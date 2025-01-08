@@ -71,17 +71,21 @@ describe('Alerts', () => {
 
 
     //Authenticated Alert
+    it.only('Authenticated alert',() => {
+
+        //approach1
+        // cy.visit('http://the-internet.herokuapp.com/basic_auth',{ auth: 
+        //                                                         {
+        //                                                           username:'admin',
+        //                                                           password:'admin'
+        //                                                          }
+        //                                                         } )
+        // cy.get("div[class='example'] p").should('have.contain',"Congratulations")
 
 
-
-
-
-
-
-
-
-
-
-
+        cy.visit("http://admin:admin@the-internet.herokuapp.com/basic_auth")
+        cy.get("div[class='example'] p").should('have.contain',"Congratulations")
+    })
+    
 
 })
